@@ -532,6 +532,16 @@ Sub GenerateReport()
 
 
     ' Navigate to Overall-Status as default view
+    ' Move Instructions and Data tabs to the end
+    If SheetExists("Instructions") Then
+        ThisWorkbook.Sheets("Instructions").Move _
+            After:=ThisWorkbook.Sheets(ThisWorkbook.Sheets.Count)
+    End If
+    If SheetExists("Data") Then
+        ThisWorkbook.Sheets("Data").Move _
+            After:=ThisWorkbook.Sheets(ThisWorkbook.Sheets.Count)
+    End If
+
     ThisWorkbook.Sheets("Story-Status").Activate
     ThisWorkbook.Sheets("Story-Status").Range("A1").Select
 
@@ -574,7 +584,7 @@ Private Sub BuildCharts(wsCht As Worksheet, sName() As String, _
     wsCht.Columns("A").ColumnWidth = 18 : wsCht.Columns("B").ColumnWidth = 10
 
     Dim pieObj As ChartObject
-    Set pieObj = wsCht.ChartObjects.Add(10, 10, 380, 280)
+    Set pieObj = wsCht.ChartObjects.Add(205, 10, 380, 280)
     With pieObj.Chart
         .ChartType = xlPie
         .SetSourceData wsCht.Range("A1:B9")
@@ -588,7 +598,7 @@ Private Sub BuildCharts(wsCht As Worksheet, sName() As String, _
     End With
 
     Dim barObj As ChartObject
-    Set barObj = wsCht.ChartObjects.Add(400, 10, 380, 280)
+    Set barObj = wsCht.ChartObjects.Add(595, 10, 380, 280)
     With barObj.Chart
         .ChartType = xlBarClustered
         .SetSourceData wsCht.Range("A1:B9")
