@@ -1,5 +1,5 @@
 ' ==============================================================
-' Jira Weekly Report Generator - VBA Macro v8-1
+' Jira Weekly Report Generator - VBA Macro v8-1-Rpt2
 '
 ' Changes from v7:
 '   Each Report tab is now split into 3 focused tabs:
