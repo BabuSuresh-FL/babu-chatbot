@@ -1,1 +1,13 @@
-test 123
+What are the different Towers? 
+
+
+Who owns what tower? 
+
+
+What each tower is focused on? What are the challenges we have seen across the different towers? 
+
+
+Toolsets they use across the towers (i.e. Sharepoint, Ansible, Terraform Community, Apptio, etc)? 
+
+
+What are the processes that we know within the towers?
